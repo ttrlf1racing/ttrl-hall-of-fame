@@ -6,25 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      --bg: #0f172a;
+      --bg: #050816;
       --bg-alt: #020617;
-      --card-bg: #1e293b;
+      --card-bg: #0b1120;
       --accent: #38bdf8;
       --text: #e5e7eb;
-      --muted: #94a3b8;
+      --muted: #9ca3af;
       --radius: 10px;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1d283a, #020617);
+      background: radial-gradient(circle at top, #111827, #020617);
       color: var(--text);
       min-height: 100vh;
     }
+
     header {
       padding: 1.5rem 1.25rem 0.75rem;
       text-align: center;
+    }
+    .logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.6rem;
+    }
+    .logo {
+      max-width: 280px;
+      width: 60%;
+      height: auto;
     }
     header h1 {
       margin: 0;
@@ -46,8 +57,9 @@
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--muted);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
+
     .filters {
       display: flex;
       flex-wrap: wrap;
@@ -77,6 +89,7 @@
       border-color: transparent;
       font-weight: 600;
     }
+
     main {
       padding: 0 1rem 2rem;
       max-width: 1120px;
@@ -93,6 +106,7 @@
     @media (min-width: 1024px) {
       .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
+
     .card {
       background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.20), transparent 55%) border-box,
                   linear-gradient(to bottom right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.98)) padding-box;
@@ -115,6 +129,7 @@
       pointer-events: none;
     }
     .card:hover::before { opacity: 1; }
+
     .card-header {
       display: flex;
       align-items: center;
@@ -124,7 +139,7 @@
       width: 42px;
       height: 42px;
       border-radius: 999px;
-      background: linear-gradient(135deg, #22d3ee, #38bdf8);
+      background: linear-gradient(135deg, #ef4444, #3b82f6, #facc15);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -149,6 +164,7 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
     }
+
     .pill-row {
       display: flex;
       flex-wrap: wrap;
@@ -166,11 +182,13 @@
       border-color: rgba(56, 189, 248, 0.9);
       color: var(--accent);
     }
+
     .body {
       font-size: 0.85rem;
       color: #cbd5f5;
       line-height: 1.4;
     }
+
     .footer {
       margin-top: auto;
       display: flex;
@@ -188,6 +206,7 @@
       letter-spacing: 0.16em;
       font-size: 0.65rem;
     }
+
     .discord-link {
       text-align: center;
       padding: 1rem 1.25rem 2rem;
@@ -203,6 +222,9 @@
 </head>
 <body>
   <header>
+    <div class="logo-wrap">
+      <img src="TTRL.2025.jpg" alt="TTRL logo" class="logo" />
+    </div>
     <div class="badge">Torque Titans Racing League</div>
     <h1>Hall of Fame</h1>
     <p>Celebrating the drivers, staff, and moments that defined each era of the league.</p>
@@ -219,6 +241,7 @@
 
   <main>
     <section class="grid">
+      <!-- Example card 1 -->
       <article class="card">
         <div class="card-header">
           <div class="avatar">S1</div>
@@ -241,6 +264,7 @@
         </div>
       </article>
 
+      <!-- Example card 2 -->
       <article class="card">
         <div class="card-header">
           <div class="avatar">AD</div>
@@ -267,7 +291,7 @@
 
   <div class="discord-link">
     <span>Want your name here? Join the grid on our Discord: </span>
-    <a href="https://discord.gg/yourInviteHere" target="_blank" rel="noopener">discord.gg/yourInviteHere</a>
+    <a href="https://discord.gg/ttrl" target="_blank" rel="noopener">discord.gg/ttrl</a>
   </div>
 </body>
 </html>
