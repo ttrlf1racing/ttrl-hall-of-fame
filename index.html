@@ -60,7 +60,6 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Top-level tabs (Sunday / Realistic / Cup / Specials) */
     .filters {
       display: flex;
       flex-wrap: wrap;
@@ -97,7 +96,6 @@
       margin: 0 auto;
     }
 
-    /* Sunday Race: 4-column layout */
     .sunday-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -240,9 +238,16 @@
       font-weight: 500;
     }
 
-    /* Tab content containers */
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
+
+    .trophy {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      flex-shrink: 0;
+      opacity: 0.9;
+    }
   </style>
 </head>
 <body>
@@ -255,7 +260,6 @@
     <p>Sunday racers, mid‑week specialists, and special event champions who defined TTRL history.</p>
   </header>
 
-  <!-- Top-level tabs -->
   <div class="filters">
     <button class="active" data-tab="sunday">Sunday Race</button>
     <button data-tab="realistic">Realistic League</button>
@@ -264,15 +268,17 @@
   </div>
 
   <main>
-    <!-- SUNDAY RACE: Tiers 1–4 columns -->
+    <!-- SUNDAY RACE -->
     <section id="tab-sunday" class="tab-panel active">
       <div class="sunday-grid">
         <!-- Tier 1 -->
         <div class="tier-column">
           <div class="tier-heading">Tier 1</div>
 
+          <!-- T1 Drivers -->
           <article class="card">
             <div class="card-header">
+              <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
               <div class="avatar">T1</div>
               <div class="meta">
                 <div class="name">Drivers Champions</div>
@@ -292,8 +298,10 @@
             </div>
           </article>
 
+          <!-- T1 Constructors -->
           <article class="card">
             <div class="card-header">
+              <img src="F1 con.png" alt="Constructors trophy" class="trophy" />
               <div class="avatar">T1</div>
               <div class="meta">
                 <div class="name">Constructors Champions</div>
@@ -321,8 +329,10 @@
         <div class="tier-column">
           <div class="tier-heading">Tier 2</div>
 
+          <!-- T2 Drivers -->
           <article class="card">
             <div class="card-header">
+              <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
               <div class="avatar">T2</div>
               <div class="meta">
                 <div class="name">Drivers Champions</div>
@@ -342,8 +352,10 @@
             </div>
           </article>
 
+          <!-- T2 Constructors -->
           <article class="card">
             <div class="card-header">
+              <img src="F1 con.png" alt="Constructors trophy" class="trophy" />
               <div class="avatar">T2</div>
               <div class="meta">
                 <div class="name">Constructors Champions</div>
@@ -370,8 +382,10 @@
         <div class="tier-column">
           <div class="tier-heading">Tier 3</div>
 
+          <!-- T3 Drivers -->
           <article class="card">
             <div class="card-header">
+              <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
               <div class="avatar">T3</div>
               <div class="meta">
                 <div class="name">Drivers Champions</div>
@@ -391,8 +405,10 @@
             </div>
           </article>
 
+          <!-- T3 Constructors -->
           <article class="card">
             <div class="card-header">
+              <img src="F1 con.png" alt="Constructors trophy" class="trophy" />
               <div class="avatar">T3</div>
               <div class="meta">
                 <div class="name">Constructors Champions</div>
@@ -417,8 +433,10 @@
         <div class="tier-column">
           <div class="tier-heading">Tier 4</div>
 
+          <!-- T4 Drivers -->
           <article class="card">
             <div class="card-header">
+              <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
               <div class="avatar">T4</div>
               <div class="meta">
                 <div class="name">Drivers Champions</div>
@@ -438,9 +456,10 @@
             </div>
           </article>
 
-          <!-- Spare slot for future T4 constructors etc. -->
+          <!-- T4 Constructors placeholder -->
           <article class="card">
             <div class="card-header">
+              <img src="F1 con.png" alt="Constructors trophy" class="trophy" />
               <div class="avatar">T4</div>
               <div class="meta">
                 <div class="name">Constructors Champions</div>
@@ -463,13 +482,14 @@
       </div>
     </section>
 
-    <!-- REALISTIC LEAGUE TAB -->
+    <!-- REALISTIC LEAGUE -->
     <section id="tab-realistic" class="tab-panel">
       <div class="tier-heading">Wednesday Realistic League</div>
       <div class="sunday-grid" style="grid-template-columns: minmax(0,1fr); max-width: 700px;">
         <div class="tier-column">
           <article class="card">
             <div class="card-header">
+              <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
               <div class="avatar">RL</div>
               <div class="meta">
                 <div class="name">Realistic League Champions</div>
@@ -492,13 +512,14 @@
       </div>
     </section>
 
-    <!-- TTRL CUP TAB -->
+    <!-- TTRL CUP -->
     <section id="tab-cup" class="tab-panel">
       <div class="tier-heading">TTRL Cup</div>
       <div class="sunday-grid" style="grid-template-columns: minmax(0,1fr); max-width: 700px;">
         <div class="tier-column">
           <article class="card">
             <div class="card-header">
+              <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
               <div class="avatar">TC</div>
               <div class="meta">
                 <div class="name">TTRL Cup Champions</div>
@@ -521,13 +542,14 @@
       </div>
     </section>
 
-    <!-- SPECIAL EVENTS TAB (Flashback etc.) -->
+    <!-- SPECIAL EVENTS -->
     <section id="tab-specials" class="tab-panel">
       <div class="tier-heading">Special Events &amp; Flashbacks</div>
       <div class="sunday-grid" style="grid-template-columns: minmax(0,1fr); max-width: 900px;">
         <div class="tier-column">
           <article class="card">
             <div class="card-header">
+              <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
               <div class="avatar">FB</div>
               <div class="meta">
                 <div class="name">S7 Flashback Tournament Winners</div>
@@ -558,7 +580,6 @@
   </div>
 
   <script>
-    // Basic tab switching
     const tabButtons = document.querySelectorAll('.filters button');
     const panels = {
       sunday: document.getElementById('tab-sunday'),
@@ -570,10 +591,8 @@
     tabButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         const target = btn.getAttribute('data-tab');
-
         tabButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
         Object.keys(panels).forEach(key => {
           panels[key].classList.toggle('active', key === target);
         });
