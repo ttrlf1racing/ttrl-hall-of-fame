@@ -494,9 +494,47 @@
       margin: 0 auto;
     }
 
+    /* Intro video overlay */
+    .intro-overlay {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+      visibility: visible;
+    }
+
+    .intro-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .intro-video {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    body.intro-playing {
+      overflow: hidden;
+    }
   </style>
 </head>
 <body>
+  <div class="intro-overlay" id="introOverlay">
+    <video
+      class="intro-video"
+      id="introVideo"
+      src="intro.mp4"
+      playsinline
+      autoplay
+      muted
+    ></video>
+  </div>
+
   <header>
     <div class="logo-wrap">
       <img src="ttrl-logo.png" alt="TTRL logo" class="logo" />
@@ -513,7 +551,6 @@
     <h1>Hall of Fame</h1>
     <p>Sunday racers, mid‑week specialists, and special event champions who defined TTRL history.</p>
 
-    <!-- Updated: hide URL text on button -->
     <a class="discord-cta" href="https://discord.gg/ttrl" target="_blank" rel="noopener">
       Join Discord
     </a>
@@ -874,11 +911,11 @@ Brandon Asquith
 
   <div class="discord-link">
     <span>Want your name here? Join the grid on our Discord.</span>
-    <!-- Updated: hide visible URL in footer link text -->
     <a href="https://discord.gg/ttrl" target="_blank" rel="noopener">Join Discord</a>
   </div>
 
   <script>
+    // Tabs
     const tabButtons = document.querySelectorAll('.filters button');
     const panels = {
       sunday: document.getElementById('tab-sunday'),
@@ -897,6 +934,27 @@ Brandon Asquith
         });
       });
     });
+
+    // Intro video logic
+    const introOverlay = document.getElementById('introOverlay');
+    const introVideo = document.getElementById('introVideo');
+
+    document.body.classList.add('intro-playing');
+
+    function hideIntro() {
+      if (!introOverlay.classList.contains('hidden')) {
+        introOverlay.classList.add('hidden');
+        document.body.classList.remove('intro-playing');
+      }
+    }
+
+    introVideo.addEventListener('ended', hideIntro);
+
+    introVideo.addEventListener('error', () => {
+      setTimeout(hideIntro, 4000);
+    });
+
+    setTimeout(hideIntro, 10000);
   </script>
 </body>
 </html>
