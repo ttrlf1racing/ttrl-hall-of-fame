@@ -356,7 +356,48 @@
       letter-spacing: 0.12em;
     }
 
+    /* Default highlight (used as fallback) */
     .pill.highlight {
+      border-color: rgba(255, 214, 0, 0.95);
+      color: var(--ttrl-yellow);
+      background: rgba(23, 23, 23, 0.9);
+    }
+
+    /* Tier‑specific pill colours */
+    .tier-column:nth-of-type(1) .pill.highlight {    /* Tier 1 */
+      border-color: rgba(255, 43, 43, 0.95);
+      color: var(--ttrl-red);
+      background: rgba(32, 8, 8, 0.95);
+    }
+
+    .tier-column:nth-of-type(2) .pill.highlight {    /* Tier 2 */
+      border-color: rgba(0, 117, 255, 0.95);
+      color: var(--ttrl-blue);
+      background: rgba(10, 20, 45, 0.95);
+    }
+
+    .tier-column:nth-of-type(3) .pill.highlight {    /* Tier 3 */
+      border-color: rgba(255, 214, 0, 0.95);
+      color: var(--ttrl-yellow);
+      background: rgba(45, 36, 5, 0.95);
+    }
+
+    .tier-column:nth-of-type(4) .pill.highlight {    /* Tier 4 */
+      border-color: rgba(229, 231, 235, 0.95);
+      color: #e5e7eb;
+      background: rgba(55, 65, 81, 0.95);
+    }
+
+    /* Realistic League pill – avoid full black on dark BG */
+    #tab-realistic .pill.highlight {
+      border-color: rgba(148, 163, 184, 0.9);
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    /* Cup and Flashback keep yellow style for continuity */
+    #tab-cup .pill.highlight,
+    #tab-specials .pill.highlight {
       border-color: rgba(255, 214, 0, 0.95);
       color: var(--ttrl-yellow);
       background: rgba(23, 23, 23, 0.9);
