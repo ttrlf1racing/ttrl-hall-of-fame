@@ -232,8 +232,8 @@
       display: flex;
       flex-direction: column;
       gap: 0.6rem;
-      min-height: 0;  /* important for equal rows */
-      height: 100%;   /* fill grid row */
+      min-height: 0;
+      height: 100%;
     }
 
     .card::before {
@@ -334,10 +334,11 @@
       background: rgba(23, 23, 23, 0.9);
     }
 
+    /* Driver text – slightly larger */
     .body {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       color: #e5e7f5;
-      line-height: 1.45;
+      line-height: 1.5;
       white-space: pre-line;
       z-index: 1;
     }
@@ -387,6 +388,12 @@
       object-fit: contain;
       flex-shrink: 0;
       opacity: 0.9;
+    }
+
+    /* Larger cup image just for TTRL Cup */
+    .trophy-cup {
+      width: 52px;
+      height: 52px;
     }
 
     /* smaller headings for single-column sections */
@@ -461,7 +468,7 @@ BigShaz
 Maxi ×3
 Jason0777
 AliFawadKhan
-NiftyNasri8 ×4
+NiftyNasri ×4
             </div>
             <div class="footer">
               <span>Multiple eras of top‑tier dominance.</span>
@@ -703,40 +710,39 @@ Milan
       </div>
     </section>
 
-   <!-- TTRL CUP -->
-<section id="tab-cup" class="tab-panel">
-  <div class="section-title">TTRL Cup</div>
-  <div class="sunday-grid narrow-grid">
-    <div class="tier-column" style="grid-template-rows: auto 1fr; gap: 0.7rem;">
-      <div class="tier-heading">Cup</div>
-      <article class="card">
-        <div class="card-header">
-          <!-- New TTRL Cup graphic -->
-          <img src="TTRLCup.png" alt="TTRL Cup logo" class="trophy" />
-          <div class="avatar avatar-tc">TC</div>
-          <div class="meta">
-            <div class="name">TTRL Cup Champions</div>
-            <div class="title">Knockout &amp; cup formats</div>
-            <div class="pill-row">
-              <span class="pill highlight">Cup</span>
-              <span class="pill">Events</span>
+    <!-- TTRL CUP -->
+    <section id="tab-cup" class="tab-panel">
+      <div class="section-title">TTRL Cup</div>
+      <div class="sunday-grid narrow-grid">
+        <div class="tier-column" style="grid-template-rows: auto 1fr; gap: 0.7rem;">
+          <div class="tier-heading">Cup</div>
+          <article class="card">
+            <div class="card-header">
+              <!-- Enlarged TTRL Cup graphic -->
+              <img src="TTRLCup.png" alt="TTRL Cup logo" class="trophy trophy-cup" />
+              <div class="avatar avatar-tc">TC</div>
+              <div class="meta">
+                <div class="name">TTRL Cup Champions</div>
+                <div class="title">Knockout &amp; cup formats</div>
+                <div class="pill-row">
+                  <span class="pill highlight">Cup</span>
+                  <span class="pill">Events</span>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="body">
+            <div class="body">
 Season 1 – Team 15
 Drivers: Speeddemon, Edveer, SevyJnr, S3L8ZZ, Wallis57snr
 Reserve drivers: Edveer, Element Snow
+            </div>
+            <div class="footer">
+              <span>Founding champions of the TTRL Cup.</span>
+              <span class="tag">Champions</span>
+            </div>
+          </article>
         </div>
-        <div class="footer">
-          <span>Founding champions of the TTRL Cup.</span>
-          <span class="tag">Champions</span>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
+      </div>
+    </section>
 
     <!-- SPECIAL EVENTS -->
     <section id="tab-specials" class="tab-panel">
