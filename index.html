@@ -173,7 +173,7 @@
       margin: 0 auto;
     }
 
-    /* GRID – equal height cards in each row */
+    /* GRID – keep 4 columns on large screens */
     .sunday-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -189,7 +189,7 @@
 
     @media (min-width: 1100px) {
       .sunday-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4-wide */
       }
     }
 
@@ -369,6 +369,12 @@
       line-height: 1.5;
       white-space: pre-line;
       z-index: 1;
+    }
+
+    /* Constructors bodies (2nd card in each tier-column) slightly smaller/tighter */
+    .tier-column .card:nth-of-type(2) .body {
+      font-size: 0.84rem;
+      letter-spacing: 0.01em;
     }
 
     .footer {
