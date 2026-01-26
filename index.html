@@ -61,7 +61,7 @@
     }
 
     header p {
-      margin: 0.35rem 0 0.75rem;
+      margin: 0.35rem 0 0.6rem;
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -102,6 +102,34 @@
     .badge-strip .c {
       background-image: linear-gradient(45deg, var(--ttrl-black) 25%, var(--ttrl-white) 25%, var(--ttrl-white) 50%, var(--ttrl-black) 50%, var(--ttrl-black) 75%, var(--ttrl-white) 75%);
       background-size: 6px 6px;
+    }
+
+    /* Header Discord CTA */
+    .discord-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+      padding: 0.5rem 1.1rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--ttrl-red), var(--ttrl-blue), var(--ttrl-yellow));
+      color: var(--ttrl-black);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .discord-cta span {
+      text-transform: none;
+      letter-spacing: 0.02em;
+    }
+
+    .discord-cta:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
     }
 
     .filters {
@@ -189,7 +217,7 @@
       content: "";
       position: absolute;
       left: 0;
-      right: 24px; /* leave space for chequered end cap */
+      right: 24px;
       bottom: 0;
       height: 3px;
       border-radius: 999px;
@@ -205,7 +233,7 @@
     .tier-column::after {
       content: "";
       position: absolute;
-      top: 1.45rem; /* aligns with line */
+      top: 1.45rem;
       right: 0;
       width: 20px;
       height: 3px;
@@ -334,7 +362,7 @@
       background: rgba(23, 23, 23, 0.9);
     }
 
-    /* Driver text – slightly larger */
+    /* Driver text – larger */
     .body {
       font-size: 0.9rem;
       color: #e5e7f5;
@@ -366,11 +394,11 @@
 
     .discord-link {
       text-align: center;
-      padding: 0.5rem 1.25rem 1.6rem;
+      padding: 0.4rem 1.25rem 1.3rem;
       color: var(--muted);
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       border-top: 1px solid rgba(31, 41, 55, 0.9);
-      background: rgba(3, 4, 12, 0.85);
+      background: rgba(3, 4, 12, 0.9);
     }
 
     .discord-link a {
@@ -431,6 +459,10 @@
     </div>
     <h1>Hall of Fame</h1>
     <p>Sunday racers, mid‑week specialists, and special event champions who defined TTRL history.</p>
+
+    <a class="discord-cta" href="https://discord.gg/ttrl" target="_blank" rel="noopener">
+      Join the grid on Discord – <span>discord.gg/ttrl</span>
+    </a>
   </header>
 
   <div class="filters">
@@ -667,19 +699,15 @@ Cutters1982
                 </div>
               </div>
             </div>
-            <div class="body">
-To be added.
-            </div>
-            <div class="footer">
-              <span>Reserved for future champions.</span>
-              <span class="tag">Coming soon</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+  <div class="body">
+SmallGirl7789 &amp; Prastgaard – Haas
+  </div>
+  <div class="footer">
+    <span>Tier 4 title‑winning team.</span>
+    <span class="tag">Champions</span>
+  </div>
 
-    <!-- REALISTIC LEAGUE -->
+    <!-- REALISTIC WEDNESDAY -->
     <section id="tab-realistic" class="tab-panel">
       <div class="section-title">Wednesday Realistic League</div>
       <div class="sunday-grid narrow-grid">
