@@ -166,10 +166,11 @@
     }
 
     .tier-column {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-rows: auto 1fr 1fr; /* heading + two cards */
       gap: 0.7rem;
       height: 100%;
+      position: relative;
     }
 
     .tier-heading {
@@ -178,8 +179,44 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
-      border-bottom: 2px solid rgba(148, 163, 184, 0.35);
-      padding-bottom: 0.2rem;
+      padding-bottom: 0.35rem;
+      margin-bottom: 0.1rem;
+      position: relative;
+    }
+
+    /* TTRL themed line between rows */
+    .tier-heading::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 24px; /* leave space for chequered end cap */
+      bottom: 0;
+      height: 3px;
+      border-radius: 999px;
+      background:
+        linear-gradient(90deg,
+          var(--ttrl-red) 0%,
+          var(--ttrl-blue) 33%,
+          var(--ttrl-yellow) 66%,
+          transparent 100%);
+      background-repeat: no-repeat;
+    }
+
+    .tier-column::after {
+      content: "";
+      position: absolute;
+      top: 1.45rem; /* aligns with line */
+      right: 0;
+      width: 20px;
+      height: 3px;
+      background-image:
+        linear-gradient(90deg,
+          var(--ttrl-black) 25%, var(--ttrl-white) 25%,
+          var(--ttrl-white) 50%, var(--ttrl-black) 50%,
+          var(--ttrl-black) 75%, var(--ttrl-white) 75%);
+      background-size: 6px 3px;
+      border-radius: 999px;
+      opacity: 0.95;
     }
 
     /* CARDS */
@@ -195,7 +232,8 @@
       display: flex;
       flex-direction: column;
       gap: 0.6rem;
-      min-height: 220px;
+      min-height: 0;  /* important for equal rows */
+      height: 100%;   /* fill grid row */
     }
 
     .card::before {
@@ -638,7 +676,8 @@ To be added.
     <section id="tab-realistic" class="tab-panel">
       <div class="section-title">Wednesday Realistic League</div>
       <div class="sunday-grid narrow-grid">
-        <div class="tier-column">
+        <div class="tier-column" style="grid-template-rows: auto 1fr; gap: 0.7rem;">
+          <div class="tier-heading">Realistic</div>
           <article class="card">
             <div class="card-header">
               <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
@@ -668,7 +707,8 @@ Milan
     <section id="tab-cup" class="tab-panel">
       <div class="section-title">TTRL Cup</div>
       <div class="sunday-grid narrow-grid">
-        <div class="tier-column">
+        <div class="tier-column" style="grid-template-rows: auto 1fr; gap: 0.7rem;">
+          <div class="tier-heading">Cup</div>
           <article class="card">
             <div class="card-header">
               <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
@@ -698,7 +738,8 @@ Details to be added. This panel will list TTRL Cup winners once the format and c
     <section id="tab-specials" class="tab-panel">
       <div class="section-title">Special Events &amp; Flashbacks</div>
       <div class="sunday-grid narrow-grid" style="max-width: 900px;">
-        <div class="tier-column">
+        <div class="tier-column" style="grid-template-rows: auto 1fr; gap: 0.7rem;">
+          <div class="tier-heading">Flashback</div>
           <article class="card">
             <div class="card-header">
               <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
