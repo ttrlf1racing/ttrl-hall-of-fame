@@ -104,7 +104,6 @@
       background-size: 6px 6px;
     }
 
-    /* Header Discord CTA */
     .discord-cta {
       display: inline-flex;
       align-items: center;
@@ -173,7 +172,6 @@
       margin: 0 auto;
     }
 
-    /* GRID – keep 4 columns on large screens */
     .sunday-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -189,13 +187,13 @@
 
     @media (min-width: 1100px) {
       .sunday-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4-wide */
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
     }
 
     .tier-column {
       display: grid;
-      grid-template-rows: auto 1fr 1fr; /* heading + two cards */
+      grid-template-rows: auto 1fr 1fr;
       gap: 0.7rem;
       height: 100%;
       position: relative;
@@ -212,7 +210,6 @@
       position: relative;
     }
 
-    /* TTRL themed line between rows */
     .tier-heading::after {
       content: "";
       position: absolute;
@@ -247,7 +244,6 @@
       opacity: 0.95;
     }
 
-    /* CARDS */
     .card {
       background:
         linear-gradient(135deg, rgba(255, 43, 43, 0.12), transparent 40%) border-box,
@@ -356,46 +352,42 @@
       letter-spacing: 0.12em;
     }
 
-    /* Default highlight (used as fallback) */
     .pill.highlight {
       border-color: rgba(255, 214, 0, 0.95);
       color: var(--ttrl-yellow);
       background: rgba(23, 23, 23, 0.9);
     }
 
-    /* Tier‑specific pill colours */
-    .tier-column:nth-of-type(1) .pill.highlight {    /* Tier 1 */
+    .tier-column:nth-of-type(1) .pill.highlight {
       border-color: rgba(255, 43, 43, 0.95);
       color: var(--ttrl-red);
       background: rgba(32, 8, 8, 0.95);
     }
 
-    .tier-column:nth-of-type(2) .pill.highlight {    /* Tier 2 */
+    .tier-column:nth-of-type(2) .pill.highlight {
       border-color: rgba(0, 117, 255, 0.95);
       color: var(--ttrl-blue);
       background: rgba(10, 20, 45, 0.95);
     }
 
-    .tier-column:nth-of-type(3) .pill.highlight {    /* Tier 3 */
+    .tier-column:nth-of-type(3) .pill.highlight {
       border-color: rgba(255, 214, 0, 0.95);
       color: var(--ttrl-yellow);
       background: rgba(45, 36, 5, 0.95);
     }
 
-    .tier-column:nth-of-type(4) .pill.highlight {    /* Tier 4 */
+    .tier-column:nth-of-type(4) .pill.highlight {
       border-color: rgba(229, 231, 235, 0.95);
       color: #e5e7eb;
       background: rgba(55, 65, 81, 0.95);
     }
 
-    /* Realistic League pill – avoid full black on dark BG */
     #tab-realistic .pill.highlight {
       border-color: rgba(148, 163, 184, 0.9);
       color: #e5e7eb;
       background: rgba(15, 23, 42, 0.95);
     }
 
-    /* Cup and Flashback keep yellow style for continuity */
     #tab-cup .pill.highlight,
     #tab-specials .pill.highlight {
       border-color: rgba(255, 214, 0, 0.95);
@@ -403,7 +395,6 @@
       background: rgba(23, 23, 23, 0.9);
     }
 
-    /* Driver text – larger */
     .body {
       font-size: 0.9rem;
       color: #e5e7f5;
@@ -412,7 +403,6 @@
       z-index: 1;
     }
 
-    /* Constructors bodies (2nd card in each tier-column) slightly smaller/tighter */
     .tier-column .card:nth-of-type(2) .body {
       font-size: 0.84rem;
       letter-spacing: 0.01em;
@@ -465,13 +455,11 @@
       opacity: 0.9;
     }
 
-    /* Larger cup image just for TTRL Cup */
     .trophy-cup {
       width: 52px;
       height: 52px;
     }
 
-    /* Team logo inline in text */
     .team-logo {
       height: 16px;
       vertical-align: text-bottom;
@@ -494,7 +482,6 @@
       margin: 0 auto;
     }
 
-    /* Intro video overlay */
     .intro-overlay {
       position: fixed;
       inset: 0;
@@ -520,6 +507,12 @@
 
     body.intro-playing {
       overflow: hidden;
+    }
+
+    @media (max-width: 767px) {
+      #tab-specials .sunday-grid {
+        grid-template-columns: 1fr !important;
+      }
     }
   </style>
 </head>
@@ -571,7 +564,6 @@
         <div class="tier-column">
           <div class="tier-heading">Tier 1</div>
 
-          <!-- T1 Drivers -->
           <article class="card">
             <div class="card-header">
               <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
@@ -593,6 +585,7 @@ JasonD777
 AliFawadKhan
 Niftynasri8 ×4
 Milan
+Speeddemon
             </div>
             <div class="footer">
               <span>Multiple eras of top‑tier dominance.</span>
@@ -600,7 +593,6 @@ Milan
             </div>
           </article>
 
-          <!-- T1 Constructors -->
           <article class="card">
             <div class="card-header">
               <img src="F1 con.png" alt="Constructors trophy" class="trophy" />
@@ -624,7 +616,8 @@ Niftynasri8 &amp; AliFawadKhan – <img src="Ferrari.png" alt="Ferrari" class="t
 Niftynasri8 &amp; Lucas Rasmussen – <img src="McLaren.png" alt="McLaren" class="team-logo" />
 JasonD777 &amp; Lucas Rasmussen – <img src="Williams.png" alt="Williams" class="team-logo" />
 Niftynasri8 &amp; Nahir Besara – <img src="McLaren.png" alt="McLaren" class="team-logo" />
-Milan &amp; Dinu.m.CS.POO - <img src="Ferrari.png" alt="Ferrari" class="team-logo" />            
+Milan &amp; Dinu.m.CS.POO - <img src="Ferrari.png" alt="Ferrari" class="team-logo" />
+Pavlison &amp; emanuel_tawiah – <img src="Mercedes.png" alt="Mercedes" class="team-logo" />
             </div>
             <div class="footer">
               <span>Iconic Tier 1 line‑ups.</span>
@@ -637,7 +630,6 @@ Milan &amp; Dinu.m.CS.POO - <img src="Ferrari.png" alt="Ferrari" class="team-log
         <div class="tier-column">
           <div class="tier-heading">Tier 2</div>
 
-          <!-- T2 Drivers -->
           <article class="card">
             <div class="card-header">
               <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
@@ -660,7 +652,8 @@ NickFuryman
 Selbzz
 TTRL Azzaman
 Maxi
-Pavlison              
+Pavlison
+Badman4life
             </div>
             <div class="footer">
               <span>Drivers who owned the midfield.</span>
@@ -668,7 +661,6 @@ Pavlison
             </div>
           </article>
 
-          <!-- T2 Constructors -->
           <article class="card">
             <div class="card-header">
               <img src="F1 con.png" alt="Constructors trophy" class="trophy" />
@@ -691,7 +683,8 @@ Richie Chappell &amp; TTRL Ricksta – <img src="Sauber.png" alt="Sauber" class=
 Jam081991 &amp; Harrison – <img src="McLaren.png" alt="McLaren" class="team-logo" />
 HellDriver &amp; Richie Chappell – <img src="McLaren.png" alt="McLaren" class="team-logo" />
 Penrose86 &amp; SaltnKepa – <img src="VCARB.png" alt="VCARB" class="team-logo" />
-Pavlison &amp; Honey_Badger - <img src="astonmartin.png" alt="astonmartin" class="team-logo" />          
+Pavlison &amp; Honey_Badger - <img src="astonmartin.png" alt="astonmartin" class="team-logo" />
+Badman4life &amp; TTRL Azzaman – <img src="Mercedes.png" alt="Mercedes" class="team-logo" />
             </div>
             <div class="footer">
               <span>Tier 2 teamwork at its best.</span>
@@ -704,7 +697,6 @@ Pavlison &amp; Honey_Badger - <img src="astonmartin.png" alt="astonmartin" class
         <div class="tier-column">
           <div class="tier-heading">Tier 3</div>
 
-          <!-- T3 Drivers -->
           <article class="card">
             <div class="card-header">
               <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
@@ -721,7 +713,8 @@ Pavlison &amp; Honey_Badger - <img src="astonmartin.png" alt="astonmartin" class
             <div class="body">
 lo_immortal_io
 vbthomass
-Shane             
+Shane
+LRS Karl
             </div>
             <div class="footer">
               <span>Leaders of the Tier 3 grid.</span>
@@ -729,7 +722,6 @@ Shane
             </div>
           </article>
 
-          <!-- T3 Constructors -->
           <article class="card">
             <div class="card-header">
               <img src="F1 con.png" alt="Constructors trophy" class="trophy" />
@@ -747,6 +739,7 @@ Shane
 Io_Immortal_io &amp; Cutters1982 – <img src="Williams.png" alt="Williams" class="team-logo" />
 Hxpcraft &amp; Jordanh97 – <img src="Haas.png" alt="Haas" class="team-logo" />
 Shane &amp; Richie Chappell - <img src="Williams.png" alt="Williams" class="team-logo" />
+LRS Karl &amp; Euanian_ – <img src="McLaren.png" alt="McLaren" class="team-logo" />
             </div>
             <div class="footer">
               <span>Tier 3 title‑winning teams.</span>
@@ -759,7 +752,6 @@ Shane &amp; Richie Chappell - <img src="Williams.png" alt="Williams" class="team
         <div class="tier-column">
           <div class="tier-heading">Tier 4</div>
 
-          <!-- T4 Drivers -->
           <article class="card">
             <div class="card-header">
               <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
@@ -776,6 +768,7 @@ Shane &amp; Richie Chappell - <img src="Williams.png" alt="Williams" class="team
             <div class="body">
 Cutters1982
 Element Snow
+MilkingBofur
             </div>
             <div class="footer">
               <span>Tier 4 title heroics.</span>
@@ -783,7 +776,6 @@ Element Snow
             </div>
           </article>
 
-          <!-- T4 Constructors -->
           <article class="card">
             <div class="card-header">
               <img src="F1 con.png" alt="Constructors trophy" class="trophy" />
@@ -799,7 +791,8 @@ Element Snow
             </div>
             <div class="body">
 SmallGirl7789 &amp; Prastgaard – <img src="Haas.png" alt="Haas" class="team-logo" />
-The_Spy_Classic &amp; yourrobbie1985 <img src="Mercedes.png" alt="Mercedes" class="team-logo" />
+The_Spy_Classic &amp; yourrobbie1985 – <img src="Mercedes.png" alt="Mercedes" class="team-logo" />
+TTRL Tiger &amp; SoberDavid – <img src="Haas.png" alt="Haas" class="team-logo" />
             </div>
             <div class="footer">
               <span>Tier 4 title‑winning team.</span>
@@ -810,61 +803,59 @@ The_Spy_Classic &amp; yourrobbie1985 <img src="Mercedes.png" alt="Mercedes" clas
       </div>
     </section>
 
-  <!-- WEDNESDAY REALISTIC  -->
-<section id="tab-realistic" class="tab-panel">
-  <div class="sunday-grid narrow-grid">
-    <div class="tier-column" style="grid-template-rows: auto 1fr 1fr; gap: 0.7rem;">
-      <div class="tier-heading">Realistic</div>
+    <!-- WEDNESDAY REALISTIC -->
+    <section id="tab-realistic" class="tab-panel">
+      <div class="sunday-grid narrow-grid">
+        <div class="tier-column" style="grid-template-rows: auto 1fr 1fr; gap: 0.7rem;">
+          <div class="tier-heading">Realistic</div>
 
-      <!-- Race 1 -->
-      <article class="card">
-        <div class="card-header">
-          <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
-          <div class="avatar avatar-rl">RL</div>
-          <div class="meta">
-            <div class="name">Wednesday Realistic Champions</div>
-            <div class="title">Race 1</div>
-            <div class="pill-row">
-              <span class="pill highlight">Realistic</span>
-              <span class="pill">Drivers</span>
+          <article class="card">
+            <div class="card-header">
+              <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
+              <div class="avatar avatar-rl">RL</div>
+              <div class="meta">
+                <div class="name">Wednesday Realistic Champions</div>
+                <div class="title">Race 1</div>
+                <div class="pill-row">
+                  <span class="pill highlight">Realistic</span>
+                  <span class="pill">Drivers</span>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="body">
+            <div class="body">
 Milan x2
 Ethan
-        </div>
-        <div class="footer">
-          <span>Master of the realistic‑performance format.</span>
-          <span class="tag">Champions</span>
-        </div>
-      </article>
-
-      <!-- Race 2 -->
-      <article class="card">
-        <div class="card-header">
-          <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
-          <div class="avatar avatar-rl">RL</div>
-          <div class="meta">
-            <div class="name">Wednesday Realistic Champions</div>
-            <div class="title">Race 2</div>
-            <div class="pill-row">
-              <span class="pill highlight">Realistic</span>
-              <span class="pill">Drivers</span>
             </div>
-          </div>
-        </div>
-        <div class="body">
+            <div class="footer">
+              <span>Master of the realistic‑performance format.</span>
+              <span class="tag">Champions</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-header">
+              <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
+              <div class="avatar avatar-rl">RL</div>
+              <div class="meta">
+                <div class="name">Wednesday Realistic Champions</div>
+                <div class="title">Race 2</div>
+                <div class="pill-row">
+                  <span class="pill highlight">Realistic</span>
+                  <span class="pill">Drivers</span>
+                </div>
+              </div>
+            </div>
+            <div class="body">
 Ocean Blade
+            </div>
+            <div class="footer">
+              <span>Master of the realistic‑performance format.</span>
+              <span class="tag">Champions</span>
+            </div>
+          </article>
         </div>
-        <div class="footer">
-          <span>Master of the realistic‑performance format.</span>
-          <span class="tag">Champions</span>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
     <!-- TTRL CUP -->
     <section id="tab-cup" class="tab-panel">
@@ -873,7 +864,6 @@ Ocean Blade
           <div class="tier-heading">TTRL Cup</div>
           <article class="card">
             <div class="card-header">
-              <!-- Enlarged TTRL Cup graphic -->
               <img src="TTRLCup.png" alt="TTRL Cup logo" class="trophy trophy-cup" />
               <div class="avatar avatar-tc">TC</div>
               <div class="meta">
@@ -899,27 +889,25 @@ Reserve drivers: Edveer, Element Snow
       </div>
     </section>
 
-   <!-- SPECIAL EVENTS -->
-<section id="tab-specials" class="tab-panel">
-  <div class="sunday-grid" style="max-width: 900px; margin: 0 auto; grid-template-columns: repeat(2, minmax(0, 1fr));">
-    
-    <!-- S7 -->
-    <div class="tier-column" style="grid-template-rows: auto 1fr; gap: 0.7rem;">
-      <div class="tier-heading">Special Events</div>
-      <article class="card">
-        <div class="card-header">
-          <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
-          <div class="avatar avatar-t4">FB</div>
-          <div class="meta">
-            <div class="name">S7 Flashback Tournament Winners</div>
-            <div class="title">Special Event</div>
-            <div class="pill-row">
-              <span class="pill highlight">Flashback</span>
-              <span class="pill">S7</span>
+    <!-- SPECIAL EVENTS -->
+    <section id="tab-specials" class="tab-panel">
+      <div class="sunday-grid" style="max-width: 900px; margin: 0 auto; grid-template-columns: repeat(2, minmax(0, 1fr));">
+        <div class="tier-column" style="grid-template-rows: auto 1fr; gap: 0.7rem;">
+          <div class="tier-heading">Special Events</div>
+          <article class="card">
+            <div class="card-header">
+              <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
+              <div class="avatar avatar-t4">FB</div>
+              <div class="meta">
+                <div class="name">S7 Flashback Tournament Winners</div>
+                <div class="title">Special Event</div>
+                <div class="pill-row">
+                  <span class="pill highlight">Flashback</span>
+                  <span class="pill">S7</span>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="body">
+            <div class="body">
 SRL Tyrone
 Lucas Rasmussen
 Niftynasri8
@@ -934,31 +922,30 @@ Speedemon
 Ewan (TheonlyEGC)
 Floris Strikey
 Brandon Asquith
-        </div>
-        <div class="footer">
-          <span>Champions of the TTRL Flashback tournament.</span>
-          <span class="tag">Event</span>
-        </div>
-      </article>
-    </div>
-
-    <!-- S8 -->
-    <div class="tier-column" style="grid-template-rows: auto 1fr; gap: 0.7rem;">
-      <div class="tier-heading" style="opacity: 0;">Special Events</div>
-      <article class="card">
-        <div class="card-header">
-          <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
-          <div class="avatar avatar-t4">FB</div>
-          <div class="meta">
-            <div class="name">S8 Flashback Tournament Winners</div>
-            <div class="title">Special Event</div>
-            <div class="pill-row">
-              <span class="pill highlight">Flashback</span>
-              <span class="pill">S8</span>
             </div>
-          </div>
+            <div class="footer">
+              <span>Champions of the TTRL Flashback tournament.</span>
+              <span class="tag">Event</span>
+            </div>
+          </article>
         </div>
-        <div class="body">
+
+        <div class="tier-column" style="grid-template-rows: auto 1fr; gap: 0.7rem;">
+          <div class="tier-heading" style="opacity: 0;">Special Events</div>
+          <article class="card">
+            <div class="card-header">
+              <img src="f1 D.png" alt="Drivers trophy" class="trophy" />
+              <div class="avatar avatar-t4">FB</div>
+              <div class="meta">
+                <div class="name">S8 Flashback Tournament Winners</div>
+                <div class="title">Special Event</div>
+                <div class="pill-row">
+                  <span class="pill highlight">Flashback</span>
+                  <span class="pill">S8</span>
+                </div>
+              </div>
+            </div>
+            <div class="body">
 Nardo
 Strikey
 Ethan
@@ -973,16 +960,15 @@ Vigoes
 Oliverbroadford
 John Marco
 Willz
+            </div>
+            <div class="footer">
+              <span>Champions of the TTRL Flashback tournament.</span>
+              <span class="tag">Event</span>
+            </div>
+          </article>
         </div>
-        <div class="footer">
-          <span>Champions of the TTRL Flashback tournament.</span>
-          <span class="tag">Event</span>
-        </div>
-      </article>
-    </div>
-
-  </div>
-</section>
+      </div>
+    </section>
   </main>
 
   <div class="discord-link">
@@ -991,7 +977,6 @@ Willz
   </div>
 
   <script>
-    // Tabs
     const tabButtons = document.querySelectorAll('.filters button');
     const panels = {
       sunday: document.getElementById('tab-sunday'),
@@ -1011,7 +996,6 @@ Willz
       });
     });
 
-    // Intro video logic
     const introOverlay = document.getElementById('introOverlay');
     const introVideo = document.getElementById('introVideo');
 
